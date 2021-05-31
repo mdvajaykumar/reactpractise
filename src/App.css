@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.king {
+  color: blue;
+  text-align: center;
+  font-size: x-large;
+}
+
+.heading {
+  color: firebrick;
+  text-align: center;
+  font-family: cursive;
+  font-size: x-large;
+}
