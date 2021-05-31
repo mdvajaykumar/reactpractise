@@ -36,7 +36,7 @@ function App() {
           type="button"
           className="btn btn-dark text-primary"
           onClick={() => postTweet()}
-          value="Tweet"
+          value="Post"
         />
       </div>
 
