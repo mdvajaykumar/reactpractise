@@ -3,21 +3,40 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [list] = useState([1, 2, 3, 4, 5, 6]);
+  const [list, setList] = useState([]);
+
+  const [inputText, setInputText] = useState("");
+
+  const UpdateValue = (e) => {
+    setInputText(e.target.value);
+  };
+
+  const AddPost = () => {
+    setList([inputText, ...list]);
+    setInputText("");
+  };
+
   return (
-    <div class="text-center">
-      <h1 className="bg-secondary sticky-top" style={{ height: "60px" }}>
-        Mini facebook
-      </h1>
-      {list.map((index, item) => (
-        <div key={index}>
-          <img
-            src={"https://picsum.photos/300" + index}
-            alt=""
-            className="bg-cover m-2 rounded"
-            style={{ height: "200px", width: "100vw" }}
-          />
-        </div>
+    <div>
+      <div
+        className="bg-primary text-center mb-2 sticky-top"
+        style={{ height: "30px" }}
+      >
+        Mini Facebook
+      </div>
+      <input
+        type="text"
+        placeholder="share your things"
+        onChange={(e) => UpdateValue(e)}
+      />
+      <input
+        type="button"
+        value="post"
+        className="m-2"
+        onClick={() => AddPost()}
+      />
+      {list.map((item, index) => (
+        <div key={index}>{item}</div>
       ))}
     </div>
   );
